@@ -1,0 +1,57 @@
+﻿<!DOCTYPE>
+<html lang="en">
+<head>
+    <title>吉林省驾驶证成绩查询系统</title>
+    <link type="text/css" rel="stylesheet" href="/static/css/css.css"/>
+</head>
+<body>
+<div id="topNavWrapper">
+    <div id="topNav">
+        <div class="logo" style="color:#FFFFFF;font-size:24px;">
+            吉林省驾驶证信息查询系统
+        </div>
+    </div>
+</div>
+<script>
+    function CheckSearchForm() {
+        if (document.getElementById("searchform").keyword.value == "") {
+            alert("请输入准考证号");
+            return false;
+        }
+    }
+</script>
+<div class="w10006">
+    <div class="news-box">
+        <div class="pro-header" style="margin:0px auto 10px auto">·&nbsp;<a href="#">驾驶证成绩查询</a></div>
+        <div class="agenttit"><h2><strong style="font-size:28px">吉林省驾驶证成绩查询</strong></h2></div>
+        <div align="center">
+            <div class="agenta">
+                <form name="searchform" id="searchform" method="post">
+                    {% csrf_token %}
+{#                    <input type="hidden" name="admission" id="act">#}
+                    <input name="admission" id="keyword" class="search-keyword" type="text" placeholder="请输入准考证号">
+                    <input type="submit" id="submit" class="search-btn">
+                </form>
+                <br/></div>
+            <br/><br/>
+            <br/><br/><br/>
+            <div class="showinfo" style="display:block; text-align:center">
+                <div id="result_agent">请输入准考证编码然后点查询即可。<br><br/></div>
+            </div>
+            <div class="news-box" style="margin:30px auto 0px auto">
+            </div>
+        </div>
+        <div style="font-size:18px; line-height:10px; margin-top:20px; height:15px; border-bottom:#ccc 0px solid; color:#333; font-family:Arial, Helvetica, sans-serif,'微软雅黑'">
+            <h2>&nbsp;</h2>
+        </div>
+    </div>
+</div>
+<!--首页网页底部-->
+<div class="foot">
+    <div class="footera">
+        版权所有 © 2015-2018 公安机关交通管理部门官方发布</br>
+        苏ICP备06012607号-2 苏公网安备 32021102000598号
+    </div>
+</div>
+</body>
+</html>
